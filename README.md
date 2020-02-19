@@ -57,4 +57,4 @@ If you want your pull requests (or patches) to be merged into master, please res
 
 ## License
 
-KIE Group website is released under [Apache 2 License](LICENSE-ASL-2.0.txt).
+KIE Group website is released under [Apache License 2.0](LICENSE-Apache-2.0.txt).
