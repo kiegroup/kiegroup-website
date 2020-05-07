@@ -37,7 +37,6 @@ Finally, just run the auto setup:
 ## Built With
 
 * [Jekyll](https://jekyllrb.com) - The static site generator
-* [Slick](http://kenwheeler.github.io/slick) - The carousel JavaScript library
 
 
 ## Contributing
