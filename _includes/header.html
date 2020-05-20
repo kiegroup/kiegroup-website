@@ -1,3 +1,5 @@
+<div id="overlay"></div>
+
 <nav id="kie_header">
   <div class="wrapper">
     <div class="logo"></div>
@@ -7,20 +9,58 @@
     <a href="http://www.drools.org">Drools</a>
     <a href="http://www.jbpm.org/">jBPM</a>
     <a href="http://www.optaplanner.org">Optaplanner</a>
-    <a href="#" id="responsive_menu_button">&#9776;</a>
-    <ul id=responsive_menu>
-      <li><a href="http://blog.kie.org">Blog</a></li>
-      <li><a href="https://kogito.kie.org">Kogito</a></li>
-      <li><a href="http://www.drools.org">Drools</a></li>
-      <li><a href="http://www.jbpm.org/">jBPM</a></li>
-      <li><a href="http://www.optaplanner.org">Optaplanner</a></li>
-    </ul>
+    <a href="#" class="responsive-menu-button">&#9776;</a>
   </div>
 </nav>
 
+<div id="responsive_menu">
+  <ul>
+    <li>
+      <a href="#" class="responsive-menu-button close-button">&#10005;</a>
+      <h4>
+        KIE websites
+      </h4>
+      <ul>
+        <li><a href="http://blog.kie.org">Blog</a></li>
+        <li><a href="https://kogito.kie.org">Kogito</a></li>
+        <li><a href="http://www.drools.org">Drools</a></li>
+        <li><a href="http://www.jbpm.org/">jBPM</a></li>
+        <li><a href="http://www.optaplanner.org">Optaplanner</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
 <script type="text/javascript">
-  $("#responsive_menu_button").click(function() {
-    $("#kie_header").toggleClass("responsive-menu-opened");
-    return false;
-  });
+  (function() {
+
+    var responsiveMenuClass = "responsive-menu-opened";
+
+    function closeResponsiveMenu() {
+      document.body.classList.remove(responsiveMenuClass);
+    }
+
+    function toggleResponsiveMenu() {
+      document.body.classList.toggle(responsiveMenuClass);
+    }
+
+    $(".responsive-menu-button").click(function(e) {
+      toggleResponsiveMenu();
+      e.preventDefault();
+      return false;
+    });
+
+    $(document).keyup(function(e) {
+      if (e.keyCode === 27) {
+        closeResponsiveMenu()
+      }
+    });
+
+    $(document).click(closeResponsiveMenu);
+
+    // Do not hide sidebar when click event happens inside of responsive menu.
+    $('#responsive_menu').click(function(event) {
+      event.stopPropagation();
+    });
+  }())
 </script>
