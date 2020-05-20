@@ -52,23 +52,6 @@ nav
     display: none
     float: right
 
-  #middleware_tab_button
-    position: relative
-    float: right
-    background: url(http://static.jboss.org/images/tabzilla/tabzilla-redhat-logo-sprite.png) no-repeat
-    width: 113px
-    height: 37px
-
-    &:after
-      background: url(http://static.jboss.org/common/images/arrow-tabnav-down.png) no-repeat
-      transition: all 0.2s ease-in-out
-      content: ""
-      position: absolute
-      height: 15px
-      right: 17px
-      top: 9px
-      width: 13px
-
   @media (max-width: 60.0rem)
     a
       display: none
@@ -76,7 +59,6 @@ nav
     h1
       border-right: none
 
-    #middleware_tab_button,
     #responsive_menu_button
       display: block
 
@@ -95,49 +77,3 @@ nav
           margin-bottom: 0
           a
             display: block
-
-
-  @media (max-width: 30.0rem)
-    #middleware_tab_button
-      display: none
-
-#middleware_tab
-  background: linear-gradient(to bottom,#e1eef4 0,#fff 60%) no-repeat scroll 0 0 transparent
-  transition: height .75s cubic-bezier(0.58, 0.15, 0.51, 0.89)
-  box-shadow: inset 0 -5px 15px 0 rgba(0,0,0, 0.1)
-  height: 0
-  overflow: hidden
-
-  .middleware-logo
-    img
-      padding: 1.5rem 7rem 3rem 0
-      border-right: 1px solid #DDD
-
-  ul
-    list-style: none
-
-    li
-      margin: 0
-
-  a
-    color: #369
-    text-decoration: none
-    text-shadow: 0 1px 1px #e4eaf1
-    font-size: 1.5rem
-
-#middleware_tab.opened
-  height: 210px
-
-#middleware_tab.opened + #kie_header
-  #middleware_tab_button:after
-    transform: rotate(180deg)
-
-@media (max-width: 40.0rem)
-  #middleware_tab.opened
-    height: 475px
-    img
-      padding: 1.5rem 3rem 3rem
-      margin-bottom: 3rem
-      border-right: none
-      border-bottom: 1px solid #DDD
-
