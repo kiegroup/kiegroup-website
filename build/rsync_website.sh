@@ -12,4 +12,4 @@
 #
 #############################################################################################################################################################################
 
-rsync -PaqvrltD -e 'ssh -p 2222' --stats --human-readable --protocol=28 --delete-after target/website/* kiegroup@filemgmt-prod-sync.jboss.org:www_htdocs/kiegroup
+rsync -PaqvrltD -e 'ssh -p 2222' --stats --human-readable --protocol=28 target/website/ kiegroup@filemgmt-prod-sync.jboss.org:www_htdocs/kiegroup/ --delete-after
